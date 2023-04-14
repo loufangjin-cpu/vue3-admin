@@ -6,17 +6,7 @@ export const _data = {
   navbarType: '左侧菜单模式',
   navbarList: ['左侧菜单模式', '顶部菜单混合模式', '顶部菜单模式', '左侧菜单混合模式'],
   systemThemeColor: '#0960BD',
-  systemThemeList: [
-    '#0960BD',
-    '#0084F4',
-    '#009688',
-    '#536DF3',
-    '#FF5C93',
-    '#EE4F12',
-    '#0096C7',
-    '#9C27B0',
-    '#FF9800'
-  ],
+  systemThemeList: ['#0960BD', '#0084F4', '#009688', '#536DF3', '#FF5C93', '#EE4F12', '#0096C7', '#9C27B0', '#FF9800'],
   navbarThemeColor: '#FFFFFF',
   navbarThemeList: [
     '#FFFFFF',
@@ -48,7 +38,7 @@ export const _data = {
 }
 
 // 主题切换
-export const _changeSetting = (params) => {
+export const _changeSetting = params => {
   let { type, value, store, data } = params
   data[type] = value
   settingThemes({ type, value })
@@ -59,7 +49,7 @@ export const _changeSetting = (params) => {
 }
 
 // 设置主题并暂存缓存
-const settingThemes = (params) => {
+const settingThemes = params => {
   const { type, value } = params
   let themes = getThemes()
   themes[type] = value
@@ -68,11 +58,11 @@ const settingThemes = (params) => {
 }
 
 // 读取主题
-export const _getThemes = (params) => {
+export const _getThemes = params => {
   let themes = getThemes()
   if (params) {
     let { data } = params
-    Object.keys(data).forEach((key) => {
+    Object.keys(data).forEach(key => {
       data[key] = themes[key] || data[key]
     })
   }
@@ -123,7 +113,7 @@ export const _getThemes = (params) => {
 }
 
 // 添加移除class
-const toggleClass = (params) => {
+const toggleClass = params => {
   let { flag, cls, dom } = params
   dom = dom || 'body'
   let classList = document.querySelector(dom)?.classList
@@ -134,10 +124,10 @@ const toggleClass = (params) => {
 const lighten = (color, amount) => {
   color = color.indexOf('#') >= 0 ? color.substring(1, color.length) : color
   amount = Math.trunc((255 * amount) / 100)
-  return `#${addLight(color.substring(0, 2), amount)}${addLight(
-    color.substring(2, 4),
+  return `#${addLight(color.substring(0, 2), amount)}${addLight(color.substring(2, 4), amount)}${addLight(
+    color.substring(4, 6),
     amount
-  )}${addLight(color.substring(4, 6), amount)}`
+  )}`
 }
 
 // 颜色计算方法

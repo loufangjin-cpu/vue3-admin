@@ -34,13 +34,7 @@
 <script setup>
 import { onMounted, reactive, ref } from 'vue'
 import * as echarts from 'echarts/core'
-import {
-  DatasetComponent,
-  TooltipComponent,
-  GridComponent,
-  LegendComponent,
-  TitleComponent
-} from 'echarts/components'
+import { DatasetComponent, TooltipComponent, GridComponent, LegendComponent, TitleComponent } from 'echarts/components'
 import { BarChart, LineChart } from 'echarts/charts'
 import { UniversalTransition } from 'echarts/features'
 import { CanvasRenderer } from 'echarts/renderers'
@@ -64,7 +58,7 @@ echarts.use([
   TitleComponent
 ])
 const filterList = (list = []) => {
-  return fetchChart.filter((item) => {
+  return fetchChart.filter(item => {
     return list.includes(item['部门'])
   })
 }
@@ -73,7 +67,7 @@ const getFormat = (list = []) => {
     title: [],
     data: []
   }
-  list.map((item) => {
+  list.map(item => {
     let list = []
     let titleList = []
     Object.entries(item).map(([key, val]) => {
@@ -96,10 +90,10 @@ const initList = () => {
   }
   jsonChartList.lintListInfo = {
     title: proxyLinList.title[0].slice(1),
-    data: proxyLinList.data[0].slice(1).map((item) => (item * 100).toFixed(2))
+    data: proxyLinList.data[0].slice(1).map(item => (item * 100).toFixed(2))
   }
 }
-const initEchartsBar = (curDOM) => {
+const initEchartsBar = curDOM => {
   const myChart = echarts.init(curDOM)
   let option
   option = {
@@ -146,7 +140,7 @@ const initEchartsBar = (curDOM) => {
   }
   option && myChart.setOption(option)
 }
-const initEchartsLine = (curDOM) => {
+const initEchartsLine = curDOM => {
   let myChart = echarts.init(curDOM)
   let option
 

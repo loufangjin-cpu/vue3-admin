@@ -1,7 +1,7 @@
 // 设置导航
 export const setTabs = (data, value) => {
   if (value) {
-    data.forEach((item) => (item.active = item.id === value))
+    data.forEach(item => (item.active = item.id === value))
   }
   sessionStorage.setItem('TABS_LIST', JSON.stringify(data))
 }
@@ -14,7 +14,7 @@ export const getTabs = () => {
 }
 
 // 设置主题
-export const setThemes = (data) => {
+export const setThemes = data => {
   localStorage.setItem('THEMES', JSON.stringify(data))
 }
 
@@ -31,7 +31,7 @@ export const getThemes = () => {
 }
 
 // 设置面包屑
-export const setBreadcrumb = (data) => {
+export const setBreadcrumb = data => {
   data = data || []
   data = data.reverse()
   sessionStorage.setItem('BREADCRUMB', JSON.stringify(data))

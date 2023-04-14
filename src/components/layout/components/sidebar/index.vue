@@ -7,12 +7,7 @@
     :class="{ 'no-transition': isCollapse }"
   >
     <logo v-if="isShowLogo"></logo>
-    <sidebar-item
-      v-for="item in menuList"
-      :key="item.menuId"
-      :item="item"
-      :collapse="collapse"
-    ></sidebar-item>
+    <sidebar-item v-for="item in menuList" :key="item.menuId" :item="item" :collapse="collapse"></sidebar-item>
   </el-menu>
 </template>
 
@@ -101,7 +96,7 @@ export default {
     })
 
     const _tabs = getTabs()
-    _tabs.forEach((item) => {
+    _tabs.forEach(item => {
       if (item.active) data.activeMenu = item.id
     })
 

@@ -1,0 +1,3 @@
+# .eslintignore
+typings
+node_modules

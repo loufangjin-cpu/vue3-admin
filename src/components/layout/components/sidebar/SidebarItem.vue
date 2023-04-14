@@ -25,11 +25,11 @@ export default {
   setup() {
     const store = useStore()
     // 点击菜单回调
-    const handleMenu = (obj) => {
+    const handleMenu = obj => {
       const { menuId, menuName } = obj
       let tabs = getTabs()
       let flag = true
-      tabs.forEach((item) => {
+      tabs.forEach(item => {
         if (item.id === menuId) {
           flag = false
         }

@@ -66,9 +66,7 @@ export const svgLoader = (path, prefix = 'icon') => {
     transformIndexHtml(html) {
       return html.replace(
         '<body>',
-        ` <svg id="svgSpriteStats" xmlns="http://www.w3.org/2000/svg"  style="display: none">${res.join(
-          ''
-        )}</svg>`
+        ` <svg id="svgSpriteStats" xmlns="http://www.w3.org/2000/svg"  style="display: none">${res.join('')}</svg>`
       )
     }
   }

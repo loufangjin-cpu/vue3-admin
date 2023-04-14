@@ -17,41 +17,21 @@
       <arrow-down class="tabs-svg border-left" />
       <template #dropdown>
         <el-dropdown-menu class="tabs-menu">
-          <el-dropdown-item
-            :disabled="disabledCurrent"
-            @click="handleMenuClose('current')"
-            icon="el-icon-close"
-          >
+          <el-dropdown-item :disabled="disabledCurrent" @click="handleMenuClose('current')" icon="el-icon-close">
             关闭当前标签页
           </el-dropdown-item>
           <el-divider></el-divider>
-          <el-dropdown-item
-            :disabled="disabledLeft"
-            @click="handleMenuClose('left')"
-            icon="el-icon-download left"
-          >
+          <el-dropdown-item :disabled="disabledLeft" @click="handleMenuClose('left')" icon="el-icon-download left">
             关闭左侧标签页
           </el-dropdown-item>
-          <el-dropdown-item
-            :disabled="disabledRight"
-            @click="handleMenuClose('right')"
-            icon="el-icon-download right"
-          >
+          <el-dropdown-item :disabled="disabledRight" @click="handleMenuClose('right')" icon="el-icon-download right">
             关闭右侧标签页
           </el-dropdown-item>
           <el-divider></el-divider>
-          <el-dropdown-item
-            :disabled="disabledOther"
-            @click="handleMenuClose('other')"
-            icon="el-icon-document-remove"
-          >
+          <el-dropdown-item :disabled="disabledOther" @click="handleMenuClose('other')" icon="el-icon-document-remove">
             关闭其他标签页
           </el-dropdown-item>
-          <el-dropdown-item
-            :disabled="disabledAll"
-            @click="handleMenuClose('all')"
-            icon="el-icon-document-delete"
-          >
+          <el-dropdown-item :disabled="disabledAll" @click="handleMenuClose('all')" icon="el-icon-document-delete">
             关闭所有标签页
           </el-dropdown-item>
         </el-dropdown-menu>
@@ -86,7 +66,7 @@ export default {
       disabledAll: true
     })
 
-    data.tabs.forEach((item) => {
+    data.tabs.forEach(item => {
       if (item.active) data.activeMenu = item.id
     })
 
@@ -94,7 +74,7 @@ export default {
     const tabsInner = ref(null)
 
     // tabs 左右滑动
-    const handleScroll = (type) => {
+    const handleScroll = type => {
       const num = 300
       const outWidth = tabsOut.value.offsetWidth
       const innerWidth = tabsInner.value.offsetWidth
@@ -116,14 +96,14 @@ export default {
     }
 
     // 点击tab
-    const handleTag = (obj) => {
+    const handleTag = obj => {
       store.commit('getActiveMenu', obj.props.name)
       setTabs(data.tabs, obj.props.name)
       judgeTabs()
     }
 
     // 关闭tab
-    const handleClose = (value) => {
+    const handleClose = value => {
       let idx = 0
       let active = false
       data.tabs.forEach((item, index) => {
@@ -142,7 +122,7 @@ export default {
     }
 
     // 显示tabs菜单
-    const handleMenuClose = (type) => {
+    const handleMenuClose = type => {
       let tabs = data.tabs
       let currentIdx = 0
       let menuId = ''
@@ -152,13 +132,13 @@ export default {
       if (type === 'current') {
         currentIdx = currentIdx > 0 ? currentIdx - 1 : currentIdx + 1
         menuId = tabs[currentIdx]?.id ?? ''
-        tabs = tabs.filter((item) => !item.active)
+        tabs = tabs.filter(item => !item.active)
         store.commit('getActiveMenu', menuId)
       } else if (type === 'other') {
-        tabs = tabs.filter((item) => item.active)
+        tabs = tabs.filter(item => item.active)
         data.tabs = tabs
       } else if (type === 'all') {
-        tabs = tabs.filter((item) => item.unCloseable)
+        tabs = tabs.filter(item => item.unCloseable)
         store.commit('getActiveMenu', '')
       } else {
         let len = tabs.length - 1

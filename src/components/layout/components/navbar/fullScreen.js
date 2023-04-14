@@ -1,4 +1,4 @@
-export const changeFullScreen = (data) => {
+export const changeFullScreen = data => {
   let element = document.documentElement
   if (data.fullscreen) {
     if (document.exitFullscreen) {
@@ -24,7 +24,7 @@ export const changeFullScreen = (data) => {
 }
 
 export const listenerEvent = (fn, data) => {
-  document.onkeydown = (event) => {
+  document.onkeydown = event => {
     if (event.keyCode == 122) {
       event.preventDefault()
       changeFullScreen(data)
