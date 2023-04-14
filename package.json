@@ -1,6 +1,7 @@
 {
 	"name": "vue3-vite-test",
 	"version": "0.0.0",
+  "license": "MIT",
 	"scripts": {
 		"dev": "vite --force --host",
 		"build": "vite build",
