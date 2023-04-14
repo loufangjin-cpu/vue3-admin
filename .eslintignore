@@ -1,3 +1,2 @@
-# .eslintignore
-typings
 node_modules
+dist

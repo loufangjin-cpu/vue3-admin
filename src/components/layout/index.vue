@@ -1,17 +1,17 @@
 <template>
-  <layout>
-    <template #home>
-      <home></home>
-    </template>
-  </layout>
+	<layout>
+		<template #home>
+			<home></home>
+		</template>
+	</layout>
 </template>
 
 <script>
-import Layout from './Layout.vue'
-import Home from 'views/Home.vue'
+import Layout from './Layout.vue';
+import Home from 'views/Home.vue';
 export default {
-  components: { Layout, Home }
-}
+	components: { Layout, Home },
+};
 </script>
 
 <style></style>
