@@ -1,25 +1,25 @@
 :root {
-  --systemThemeColor: #0960bd;
-  --navbarThemeColor: #ffffff;
-  --navbarColor: rgba(0, 0, 0, 0.85); // 当navbar背景为白色时
-  --sidebarThemeColor: #001529;
-  --sidebarThemeColorActive: #0960bd;
-  --systemThemeColorActive: #93ffff;
-  --contentBgColor: #f0f2f5;
-  --border-color: #f0f0f0;
+	--systemThemeColor: #0960bd;
+	--navbarThemeColor: #ffffff;
+	--navbarColor: rgba(0, 0, 0, 0.85); // 当navbar背景为白色时
+	--sidebarThemeColor: #001529;
+	--sidebarThemeColorActive: #0960bd;
+	--systemThemeColorActive: #93ffff;
+	--contentBgColor: #f0f2f5;
+	--border-color: #f0f0f0;
 
-  --el-border-color-base: #dcdfe6;
+	--el-border-color-base: #dcdfe6;
 }
 
 .night-mode {
-  --navbarThemeColor: #1f1f1f;
-  --navbarColor: #ffffff;
-  --sidebarThemeColor: #1f1f1f;
-  --contentBgColor: #000000;
-  --border-color: #303030;
-  --el-border-color-base: #303030;
+	--navbarThemeColor: #1f1f1f;
+	--navbarColor: #ffffff;
+	--sidebarThemeColor: #1f1f1f;
+	--contentBgColor: #000000;
+	--border-color: #303030;
+	--el-border-color-base: #303030;
 
-  --el-border-color-light: #303030;
+	--el-border-color-light: #303030;
 }
 
 $systemTheme: var(--systemThemeColor);
@@ -41,7 +41,7 @@ $logoWidth: 200px;
 $marginWidth: 1rem;
 $paddingWidth: 1rem;
 @media screen and(max-width: 1000px) {
-  $paddingWidth: 10px;
+	$paddingWidth: 10px;
 }
 
 // 边框

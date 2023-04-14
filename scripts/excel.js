@@ -6,7 +6,7 @@ const beautify = require('json-beautify');
 const { readExcel } = require('./readExcel.js');
 // 项目路径
 const wholePath = path.resolve(__dirname, '../src/utils/fetchChart.js');
-const prettierPath = path.resolve(__dirname, '../prettier.js');
+const prettierPath = path.resolve(__dirname, '../prettierrc.js');
 
 const result = readExcel();
 
