@@ -23,6 +23,10 @@
 					一键换肤，自定义颜色换肤，多种布局方式，图表制作
 				</div>
 				<div class="details">
+					<span>github：</span>
+					<a href="https://github.com/loufangjin-cpu/vue3-admin">https://github.com/loufangjin-cpu/vue3-admin</a>
+				</div>
+				<div class="details">
 					<span>作 者：</span>
 					娄方金
 				</div>

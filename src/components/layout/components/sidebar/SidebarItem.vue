@@ -16,6 +16,7 @@
 <script>
 import { setTabs, getTabs } from 'utils/storage.js';
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 
 export default {
 	props: {
@@ -34,9 +35,10 @@ export default {
 	},
 	setup() {
 		const store = useStore();
+		const router = useRouter();
 		// 点击菜单回调
 		const handleMenu = (obj) => {
-			const { menuId, menuName } = obj;
+			const { menuId, menuName, path } = obj;
 			let tabs = getTabs();
 			let flag = true;
 			tabs.forEach((item) => {
@@ -53,6 +55,7 @@ export default {
 			}
 			store.commit('getActiveMenu', menuId);
 			setTabs(tabs, menuId);
+			router.push(path);
 		};
 
 		return {

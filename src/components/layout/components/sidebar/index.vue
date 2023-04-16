@@ -18,6 +18,7 @@ import Logo from '../Logo.vue';
 import SidebarItem from './SidebarItem.vue';
 import { getTabs } from 'utils/storage';
 import { setBreadcrumb } from 'utils/storage';
+import { getMenuList } from 'utils/menuList';
 export default {
 	components: { Logo, SidebarItem },
 	props: {
@@ -39,55 +40,7 @@ export default {
 		const { collapse } = toRefs(props);
 		const data = reactive({
 			activeMenu: '',
-			menuList: [
-				{
-					menuId: '111',
-					menuName: '导航一',
-					path: '',
-					children: [
-						{ menuId: '111-1', menuName: '选项1', path: '', children: [] },
-						{ menuId: '111-2', menuName: '选项2', path: '', children: [] },
-						{ menuId: '111-3', menuName: '选项3', path: '', children: [] },
-						{
-							menuId: '111-4',
-							menuName: '这是选项4哦',
-							path: '',
-							children: [
-								{
-									menuId: '111-4-1',
-									menuName: '这是选项4-1哦',
-									path: '/',
-									children: [],
-								},
-								{
-									menuId: '111-4-2',
-									menuName: '这是选项4-2哦',
-									path: '/',
-									children: [
-										{
-											menuId: '111-4-2-1',
-											menuName: '这是选项4-2-1哦',
-											path: '/',
-											children: [],
-										},
-									],
-								},
-							],
-						},
-					],
-				},
-				{
-					menuId: '222',
-					menuName: '导航二',
-					path: '',
-					children: [
-						{ menuId: '222-1', menuName: '导航二1', path: '/', children: [] },
-						{ menuId: '222-2', menuName: '导航二2', path: '/', children: [] },
-						{ menuId: '222-3', menuName: '导航二3', path: '/', children: [] },
-					],
-				},
-				{ menuId: '333', menuName: '导航三', path: '/', children: [] },
-			],
+			menuList: getMenuList(),
 		});
 
 		// 是否显示Logo

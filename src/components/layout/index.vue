@@ -1,7 +1,11 @@
 <template>
 	<layout>
 		<template #home>
-			<home></home>
+			<router-view v-slot="{ Component }">
+				<!-- <transition name="move" mode="out-in"> -->
+				<component :is="Component"></component>
+				<!-- </transition> -->
+			</router-view>
 		</template>
 	</layout>
 </template>

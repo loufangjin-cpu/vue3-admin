@@ -49,7 +49,7 @@
 		"strings": true
 	},
 	"extensions.ignoreRecommendations": false,
-	"window.zoomLevel": 1,
+	// "window.zoomLevel": 1,
 	"files.autoGuessEncoding": false,
 	"workbench.sideBar.location": "left",
 	"editor.codeActionsOnSave": {

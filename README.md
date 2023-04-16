@@ -1,6 +1,6 @@
-# eslint + prettier + husky + lint-staged 约束项目
-- 参考链接: https://juejin.cn/post/7142815651294511135#heading-6
-- yarn create vite-pretty-lint
+# 1、一键换肤，自定义颜色换肤，多种布局方式
+# 2、图表制作
+
 ```bash
 cd vue3-admin-vite
 
